@@ -15,8 +15,8 @@ options.forEach(option => {
 // validation ...
 
 $('#register').click(()=>{
-    if(checkName == true && checkPhone == true && checkEmail == true && btn.innerHTML != "\n                        "){
-        $('#alertRegister').html('مرحبا بكم');
+    if(btn.innerHTML != "\n                        "){
+        $('#alertRegister').html('تم إرسال طلبك . سيتم التواصل معك قريبا');
         $('#alertRegister').addClass('text-success');
         $('#alertRegister').removeClass('text-danger');
     }
@@ -28,77 +28,37 @@ $('#register').click(()=>{
 })
 
 
-// for name 
+// to get inputs values
 
-let checkName;
-function validUserName(){
-    let regexName = /^([أ-ي_ ]|[A-Za-z_ ]){2,}$/;
-    checkName = (regexName.test($('#name').val()));
-    if(checkName == true)
-    {
-        $('#name').addClass('is-valid');
-        $('#name').removeClass('is-invalid');
-        $('#alertName').css('display' , 'none');
-    }
-    else
-    {
-        $('#name').addClass('is-invalid');
-        $('#name').removeClass('is-valid');
-        $('#alertName').css('display' , 'block');
-    }
+function Activity(Value){
+    document.getElementById("Activity").value = Value;
+    document.getElementById("activity").innerHTML = Value;
 }
 
-$('#name').on('input' , function(){
-    validUserName();
-})
+// to send order
 
-// for phone 
-
-let checkPhone;
-function validUserPhone(){
-    let regexPhone = /^(00|\+)(966)[0-9]{9}$/;
-    checkPhone = regexPhone.test($('#phone').val());
-    if(checkPhone == true)
-    {
-        $('#phone').addClass('is-valid');
-        $('#phone').removeClass('is-invalid');
-        $('#alertPhone').css('display' , 'none');
-    }
-    else
-    {
-        $('#phone').addClass('is-invalid');
-        $('#phone').removeClass('is-valid');
-        $('#alertPhone').css('display' , 'block');
-    }
+function SubmitForm(){
+    var Name = document.getElementById("name").value;
+    var Phone = document.getElementById("phone").value;
+    var ClientEmail = document.getElementById("email").value;
+    var Activity = document.getElementById("Activity").value;
+    $.ajax({
+        url: 'https://zarisolution.com/custom/index_form_submit.php',
+        type: 'POST',
+        data:{Name:Name,Phone:Phone,ClientEmail:ClientEmail,Activity:Activity, _token: '{{csrf_token()}}' },
+        dataType:"json",
+        success: function() {
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("email").value = "";
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("email").value = "";
+        }
+    });
 }
-
-$('#phone').on('input' , function(){
-    validUserPhone();
-})
-
-// for email 
-
-let checkEmail;
-function validUserEmail(){
-    let regexEmail = /^[a-zA-Z0-9_]{3,15}(@gmail\.com)$/;
-    checkEmail = regexEmail.test($('#email').val());
-    if(checkEmail == true)
-    {
-        $('#email').addClass('is-valid');
-        $('#email').removeClass('is-invalid');
-        $('#alertEmail').css('display' , 'none');
-    }
-    else
-    {
-        $('#email').addClass('is-invalid');
-        $('#email').removeClass('is-valid');
-        $('#alertEmail').css('display' , 'block');
-    }
-}
-
-$('#email').on('input' , function(){
-    validUserEmail();
-})
 
 
 // for get dynamic year

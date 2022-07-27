@@ -62,11 +62,6 @@ input,
     text-align: right;
 }
 
-/* .form-control:focus{
-    box-shadow: none;
-    border-color: var(--mainColor) !important;
-} */
-
 .inputs-list .dropdown-menu a {
     margin: 5px auto !important;
 }
@@ -131,8 +126,6 @@ input,
 
     .note {
         display: none;
-        /* transform: none;
-        margin-bottom: 1rem; */
     }
 
     .character {

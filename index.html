@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-Type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta anme="author" content="AHMED RASHED" />
+    <meta name="author" content="AHMED RASHED" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Tajawal:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -33,40 +33,41 @@
                     <img src="images/Vector 4.png" class="w-75 position-absolute top-50 start-0 vector" alt="vector">
                 </div>
                 <div class="col-lg-6">
-                    <div class="inputs-list bg-white ">
-                        <label for="name">الأسم</label>
-                        <input id="name" type="text" name="name" required class="form-control">
-                        <div id="alertName" class="alert alert-danger p-1 text-center mx-auto mt-1 mb-0">لا يقل عن حرفين</div>
+                    <form >
+                        <div class="inputs-list bg-white ">
+                            <label for="name">الأسم</label>
+                            <input id="name" type="text" name="Name" required class="form-control">
 
-                        <label for="phone">رقم الجوال</label>
-                        <input id="phone" type="tel" name="phone" required class="form-control">
-                        <div id="alertPhone" class="alert alert-danger p-1 text-center mx-auto mt-1 mb-0">يتكون من +966 أو 00966 متبوعا برقم الهاتف مكون من 9 أرقام</div>
+                            <label for="phone">رقم الجوال</label>
+                            <input id="phone" type="tel" name="Phone" required class="form-control">
 
-                        <label for="email">الإيميل</label>
-                        <input id="email" type="email" name="email" required class="form-control">
-                        <div id="alertEmail" class="alert alert-danger p-1 text-center mx-auto mt-1 mb-0">يتكون من 3 : 15 حرف أو رقم وينتهي ب ("gmail".com@)</div>
+                            <label for="email">الإيميل</label>
+                            <input id="email" type="email" name="ClientEmail" required class="form-control">
 
-                        <label for="activity">نوع النشاط</label>
-                        <button class="form-control dropdown-toggle mb-4" type="menu" id="activity"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                        </button>
-                        <div class="dropdown-menu p-3" aria-labelledby="activity">
-                            <a class="dropdown-item">كوفي شوب</a>
-                            <a class="dropdown-item">صالون رجالي</a>
-                            <a class="dropdown-item">صالون نسائي</a>
-                            <a class="dropdown-item">سبا سنتر</a>
-                            <a class="dropdown-item">مركز مساج</a>
-                            <a class="dropdown-item">مطعم وكوفي</a>
-                            <a class="dropdown-item">محل زهور وهدايا</a>
-                            <a class="dropdown-item">دايت سنتر</a>
-                            <a class="dropdown-item">مغسلة سيارات</a>
-                            <a class="dropdown-item">مغسلة ملابس</a>
-                            <a class="dropdown-item">صالة ألعاب ترفيهية</a>
+                            <input type = "hidden" id = "Activity" name = "Activity" value = "0">
+
+                            <label for="activity">نوع النشاط</label>
+                            <button class="form-control dropdown-toggle mb-4" type="menu" id="activity"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            </button>
+                            <div class="dropdown-menu p-3" aria-labelledby="activity">
+                                <a class="dropdown-item" onclick = "Activity('كوفي شوب')">كوفي شوب </a>
+                                <a class="dropdown-item" onclick = "Activity('صالون رجالي')">صالون رجالي </a>
+                                <a class="dropdown-item" onclick = "Activity('صالون نسائي')"> صالون نسائي </a>
+                                <a class="dropdown-item" onclick = "Activity('سبا سنتر')">سبا سنتر </a>
+                                <a class="dropdown-item" onclick = "Activity('مركز مساج')">مركز مساج </a>
+                                <a class="dropdown-item" onclick = "Activity('مطعم وكوفي')">مطعم وكوفي </a>
+                                <a class="dropdown-item" onclick = "Activity('محل زهور وهدايا')">محل زهور وهدايا </a>
+                                <a class="dropdown-item" onclick = "Activity('دايت سنتر')">دايت سنتر </a>
+                                <a class="dropdown-item" onclick = "Activity('مغسلة سيارات')">مغسلة سيارات </a>
+                                <a class="dropdown-item" onclick = "Activity('مغسلة ملابس')">مغسلة ملابس </a>
+                                <a class="dropdown-item" onclick = "Activity('صالة العاب ترفيهيه')">صالة العاب ترفيهيه </a>
+                            </div>
+                            <p id="alertRegister" class="fs-6 mb-2 mt-3 w-75 text-center mx-auto"></p>
+                            <a id="register" onclick="SubmitForm()" class="btn btn-black form-control text-white text-center py-2 mb-3">أبدأ الآن</a>
+                            <a class="btn btn-cofe form-control text-black text-center py-2">تحدث معنا</a>
                         </div>
-                        <p id="alertRegister" class="fs-6 mb-2 mt-3 w-75 text-center mx-auto"></p>
-                        <a id="register" class="btn btn-black form-control text-white text-center py-2 mb-3">أبدأ الآن</a>
-                        <a class="btn btn-cofe form-control text-black text-center py-2">تحدث معنا</a>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-lg-3 d-flex justify-content-end align-items-end position-relative cont-char">
                     <div class="character">
