@@ -12,10 +12,17 @@ options.forEach(option => {
 });
 
 
+// define inputs
+
+let nameUser = document.getElementById('name');
+let phoneUser = document.getElementById('phone');
+let emailUser = document.getElementById('email');
+
+
 // validation ...
 
 $('#register').click(()=>{
-    if(btn.innerHTML != "\n                        "){
+    if(nameUser.Value != "" && phoneUser.value != "" && emailUser.value != "" && btn.innerHTML != "\n                        "){
         $('#alertRegister').html('تم إرسال طلبك . سيتم التواصل معك قريبا');
         $('#alertRegister').addClass('text-success');
         $('#alertRegister').removeClass('text-danger');
