@@ -2,10 +2,10 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <title> Zari Solution </title>
+    <title> Zari Solutions </title>
     <meta charset="UTF-8">
-    <meta name="description" content="Zari Solution">
-    <meta name="kaywords" content="Zari Solution">
+    <meta name="description" content="Zari Solutions">
+    <meta name="kaywords" content="Zari Solutions">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-Type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- Zari Solution form -->
+    <!-- Zari Solutions form -->
     <section class="bg-black app-form">
         <div class="container position-relative py-5">
             <img src="images/Vector 5.png" class="position-absolute top-0 start-0 ms-2 w-25 vector" alt="vector">
@@ -43,8 +43,12 @@
 
                             <label for="email">الإيميل</label>
                             <input id="email" type="email" name="ClientEmail" required class="form-control">
+                            <div id="alertEmail" class="alert alert-danger p-1 text-center mx-auto mt-1 mb-0">الإيميل غير صالح</div>
 
-                            <input type = "hidden" id = "Activity" name = "Activity" value = "0">
+                            <label for="Activity">نوع النشاط</label>
+                            <input  type="text" name="Activity" id="Activity" required class="form-control">
+
+                            <!-- <input type = "hidden" id = "Activity" name = "Activity" value = "0">
 
                             <label for="activity">نوع النشاط</label>
                             <button class="form-control dropdown-toggle mb-4" type="menu" id="activity"
@@ -62,7 +66,7 @@
                                 <a class="dropdown-item" onclick = "Activity('مغسلة سيارات')">مغسلة سيارات </a>
                                 <a class="dropdown-item" onclick = "Activity('مغسلة ملابس')">مغسلة ملابس </a>
                                 <a class="dropdown-item" onclick = "Activity('صالة العاب ترفيهيه')">صالة العاب ترفيهيه </a>
-                            </div>
+                            </div> -->
                             <p id="alertRegister" class="fs-6 mb-2 mt-3 w-75 text-center mx-auto"></p>
                             <a id="register" onclick="SubmitForm()" class="btn btn-black form-control text-white text-center py-2 mb-3">أبدأ الآن</a>
                             <a target="_blank" href="https://wa.me/+966566770235" class="btn btn-cofe form-control text-black text-center py-2">تحدث معنا</a>
@@ -215,6 +219,10 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+
+
+    </script>
 
 </body>
 
